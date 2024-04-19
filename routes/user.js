@@ -57,7 +57,7 @@ router.post("/signup", async (req, res) => {
         },
       });
       await transporter.sendMail({
-        from: '"Account Manager" <mohammed.schowalter@ethereal.email>', 
+        from: '"Account Manager" <uriah.wuckert34@ethereal.email>', 
         to: username, 
         subject:"Email Verification",
         text:otp,
