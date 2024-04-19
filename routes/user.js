@@ -28,7 +28,7 @@ router.post("/signup", async (req, res) => {
   try {
     const { success, error } = signupBody.safeParse(req.body);
     if (!success) {
-      return res.status(411).json({ message: "Invalid data:", error }); // Provide specific error details
+      return res.status(411).json({ message: "Invalid data:", error }); 
     }
     
     const existingUser = await User.findOne({ username:req.body.username });
@@ -57,7 +57,7 @@ router.post("/signup", async (req, res) => {
         },
       });
       await transporter.sendMail({
-        from: '"Account Manager" <mohammed.schowalter@ethereal.email>', // sender address
+        from: '"Account Manager" <mohammed.schowalter@ethereal.email>', 
         to: username, 
         subject:"Email Verification",
         text:otp,
