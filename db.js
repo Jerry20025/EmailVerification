@@ -3,8 +3,11 @@ mongoose.connect("mongodb+srv://ak2498315:omlVj4L5V9W7H5ny@cluster0.qeunvkq.mong
 
 const userSchema = new mongoose.Schema({
     username: {
-        type: String,
+       type: String,
+        index:true,
         required: true,
+        unique:true,
+        sparse:true,
         trim: true,
         lowercase: true,
     },
