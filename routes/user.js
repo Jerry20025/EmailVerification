@@ -5,7 +5,7 @@ const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
 const nodemailer = require("nodemailer");
-
+ 
 const signupBody = zod.object({
   username: zod.string().email(),
   password: zod.string(),
